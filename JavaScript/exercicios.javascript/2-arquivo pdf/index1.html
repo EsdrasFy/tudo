@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equive="X-UA-Compatible" content="ie-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    
+    <title>Gerar PDF</title>
+</head>
+<body>
+    <div id="dados">
+    <p>conteudo</p>
+    </div>
+    <p>
+        <input type="button" value="imprimir" onclick="funcao_pdf()">
+    </p>
+
+<script>
+function funcao_pdf() {
+  var pegar_dados=document.getElementById('dados').innerHTML;
+  var janela = window.open( '  ' ,  '  ' ,'width=800,heigth=600');
+  janela.document.write('<html><head>');
+  janela.document.write('<title>PDF</title></head>');
+  janela.document.write('<body>');
+  janela.document.write(pegar_dados);
+  janela.document.write('</body></html>');
+  janela.document.close();
+  janela.print();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Quase Boa</title>
+    <style>
+        *{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #8282FF;
+            
+        }
+        button{
+            width: 157px;
+            height: 95px;
+            color: azure;
+            margin: 10px;
+            background-color: #5656d1;
+            border: 0px;
+            box-shadow:  5px 4px 4px rgba(0, 0, 0, 0.692);
+            cursor: pointer;
+            
+        }
+        #result1{
+            width: 157px;
+            height: 95px;
+            margin: 10px; 
+            
+            background-color: #5656d1;
+            box-shadow:  5px 4px 4px rgba(0, 0, 0, 0.692);
+            display: flex;
+            font-size: 28px;
+        }
+        #result{
+            position: relative;
+            left: 30%;
+            top: 40%;
+            color:azure;
+        }
+        h1{
+            padding-top: 10px;
+            font-size: larger;
+            margin-left: 40px;
+            color: #ff00ff;
+            margin-bottom: 5px;
+            text-shadow: 2.5px 1.5px 5px #ff00ff8a;
+        }
+        hr{
+            width: 320px;
+            margin: 0 0 10px 20px ;
+            
+        }
+        #center{
+    
+            background-color: #212152;;
+            margin-left: 50%;
+            transform: translate(-50%);
+            width: 360PX;
+            padding-bottom: 20px;
+            border-radius: 10px;
+            border: 4px #5656d1 solid ;
+            box-shadow:  8px 8px 10px rgba(0, 0, 0, 0.692);
+        }
+        #limpar{
+            position: absolute;
+            top: 69%;
+            left: 51%;
+        }
+    </style>
+</head>
+<body>
+    <div id="center">
+        <h1> Lógica de Programação</h1>
+        <hr>
+        <button onclick="btn1('+')">+</button>
+        <button onclick="btn1('-')">-</button> <br>
+        <button onclick="btn1('*')">x</button>
+        <button onclick="btn1('/')">/</button><br>
+        <div id="result1">
+            <div id="result">
+            </div>
+        </div>
+        <button onclick="limparTabuada()" id="limpar"> Limpar Conta</button>
+    </div>
+
+    <div id="output">
+        <h1>little store</h1>
+
+    </div>
+    <script>
+        
+        var result = document.querySelector ('#result')
+        var som = 0
+        var clean = ''
+
+        
+
+        function btn1(valores){
+
+            var n1 = prompt ("digite um nmr");
+                n1 = parseFloat (n1);
+            if ( isNaN (n1) ){
+                result.innerHTML = som ;
+                throw new Error ('digite um numero ');
+            }
+            
+            switch (valores){
+                case '+':
+                som = som + n1;
+                result.innerHTML = som ;
+                break;
+                case '-':
+                som = som - n1;
+                result.innerHTML = som ;
+                break;
+                case '*':
+                som = som * n1;
+                result.innerHTML = som ;
+                break;
+                case '/':
+                som = som / n1;
+                result.innerHTML = som ;
+                break;
+            }
+
+
+            
+        }
+        function limparTabuada(){
+        clean = '';
+        result.innerHTML = clean;
+        som = 0
+    }
+
+    //var produtos = new Array('cueca');
+    //produtos.push ('calça','camisa', 'blusa', 'shorts', 'tenis','chinelo');
+
+    //var output = document.querySelector ('#output');
+
+    //var msg = '';
+    //for(var i = 0; i < produtos.length; i++){
+        //msg += 'produtos  '+ (i + 1) + ':  ' + produtos [i] + '<br>';
+    //}
+        //output.innerHTML = msg;
+        
+        
+    </script>
+</body>
+</html>

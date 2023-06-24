@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gerar pdf</title>
+</head>
+<body>
+    <h1>gerando um arquivo em pdf com javascript</h1>
+    <div id="dados">
+        <p>nome: Joao       Idade:22 Altura: 1.77</p>
+        <p>nome: Jose       Idade:35 Altura: 1.89</p>
+        <p>nome: Junior     Idade:27 Altura: 1.80</p>
+        <p>nome: Joelma     Idade:53 Altura: 1.65</p>
+        <p>nome: Jandira    Idade:40 Altura: 1.63</p>
+    </div>
+    <p>
+        <input type="button" value="IMPRIMIR" onclick="funcao_pdf()">
+    </p>
+
+</body>
+    <script> 
+
+        function funcao_pdf() {
+
+            var pegar_dados = document.getElementById ('dados').innerHTML;
+
+            var janela = window.open('','','width=800, heigth=600');
+
+            janela.document.write('<html><head>');
+            janela.document.write('<title>PDF</title></head>');
+            janela.document.write('<body>');
+            janela.document.write(pegar_dados);
+            janela.document.write('</body> </html>');
+            janela.document.close();
+            janela.print();
+
+        }
+        //q por acaso nao funciona
+
+    </script>
+
+</html>

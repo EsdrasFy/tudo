@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dias da semana</title>
+</head>
+<body>
+    <h1>
+        calendario
+    </h1>
+    <div id="calendar"></div>
+    <script>
+        var calendar = document.querySelector ('#calendar');
+
+        var dias =  new Array ( 'domino', 'segunda', 'terça', 'quarta' , 'quinta', 'sexta', 'sábado');
+
+        var hoje = new Date();
+
+        var diadaSemana = hoje.getDay ();
+        
+        alert ('bem vindo, hoje é ' + dias[diadaSemana])
+        /*switch (diadaSemana){
+            case  0:
+            calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Domingo'
+                
+                break;
+
+            case  1:
+                calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Segunda'
+                break;
+                
+            case  2:
+                calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Terça'
+                break;
+
+
+            case  3:
+                calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Quarta'
+                break;
+
+            case  4:
+                calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Quinta'
+                break;
+
+            case  5:
+                calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Sexta'
+                break;
+
+            case  6:
+                    calendar.innerHTML = 'bom dia, tenha um(a) otimo(a), Sábado'
+                break;
+        }*/
+        
+    </script>
+</body>
+</html>
